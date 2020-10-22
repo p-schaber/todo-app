@@ -3,17 +3,17 @@ const todosData = [
     {
         id: 1,
         text: "Do the dishes",
-        complete: false,
+        complete: true,
     },
     {
         id: 2,
         text: "Wipe down the counters, sink, stove",
-        complete: false,
+        complete: true,
     },
     {
         id: 3,
         text: "Put shoes away",
-        complete: true,
+        complete: false,
     },
     {
         id: 4,

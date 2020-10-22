@@ -8,16 +8,20 @@ const TodoItem = (props) => {
      * var isChecked = checkStateVariable[0] // First item in a pair
      * var setCheck = checkStateVariable[1] // Second item in a pair
      */
-    const [isChecked, setCheck] = useState(false)
+    const [isChecked, setCheck] = useState(props.item.complete)
+    const completedStyle = {
+        fontStyle: "italic",
+        color: "#cdcdcd",
+        textDecoration: "line-through"
+    }
 
     return(
         <div className="todo-item">
             <input 
                 type="checkbox"
                 checked={isChecked}
-                onChange={() => setCheck(isChecked ? false : true)}/>
-            <p>{props.item.text}</p>
-            <button>Click here!</button>
+                onClick={() => setCheck(!isChecked)}/>
+            <p style={isChecked ? completedStyle : null}>{props.item.text}</p>
         </div>
     )
 }
